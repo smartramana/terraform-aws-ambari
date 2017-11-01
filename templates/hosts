@@ -1,0 +1,26 @@
+[hdp]
+${hdp_addresses}
+
+[master]
+${master_addresses}
+
+[ambari]
+${ambari_addresses}
+
+[ansible]
+localhost
+
+[all:vars]
+ambari_server=${ambari_addresses}
+
+[ambari:vars]
+role= ambari
+
+[hdp:vars]
+role= node
+
+[master:vars]
+role= master
+
+[ansible:vars]
+role= cluster_orchestrator
