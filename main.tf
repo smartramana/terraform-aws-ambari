@@ -1,5 +1,12 @@
 /* this module is aimed at installing nodes needed to setup hortonworks ambari and hdp nodes on aws (for now) */
 /* setup the aws provider */
+terraform {
+  backend "s3" {
+    bucket = "tf-merc-1"
+    key    = "test1"
+  }
+}
+
 provider "aws" {
   region     = "${var.aws_region}"
   shared_credentials_file = ".aws/credentials"
